@@ -1,0 +1,40 @@
+logging:
+    level:
+        ROOT: INFO
+        com.noobug: DEBUG
+        org.springframework: INFO
+
+spring:
+    profiles:
+        active: test
+    devtools:
+        restart:
+            enabled: false
+        livereload:
+            enabled: false
+    h2:
+        console:
+            enabled: false
+    datasource:
+        type: com.zaxxer.hikari.HikariDataSource
+        url: jdbc:mysql://119.23.149.25:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false
+        username: root
+        password: Daedalus@130
+    jpa:
+        hibernate:
+            ddl-auto: none
+        database: MYSQL
+        show-sql: true
+        properties:
+            hibernate.id.new_generator_mappings: true
+            hibernate.cache.use_second_level_cache: false
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: false
+    mail:
+        host: smtp.qq.com
+        port: 465
+        username: 1427762764@qq.com
+        password: w321654
+
+server:
+    port: 8080
