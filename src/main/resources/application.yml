@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active: #spring.profiles.active#
+  jackson:
+    time-zone: GMT+8
+  jpa:
+    open-in-view: false
+
+  #========================
+  # «∞∂Àƒ£∞Â≈‰÷√
+#  thymeleaf:
+#    cache: false
+#    mode: HTML5
+
+
+server:
+  tomcat:
+    uri-encoding: UTF-8
