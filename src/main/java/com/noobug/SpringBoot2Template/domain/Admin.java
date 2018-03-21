@@ -1,5 +1,6 @@
 package com.noobug.SpringBoot2Template.domain;
 
+import com.noobug.webtools.entity.BasePojo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,7 +15,7 @@ import javax.persistence.Table;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Admin {
+public class Admin extends BasePojo {
 
     @Id
     @GeneratedValue

@@ -1,5 +1,10 @@
 package com.noobug.webtools.entity;
 
+/**
+ * 错误码信息 用于枚举错误值
+ *
+ * @author noobug.com
+ */
 public class ErrorCode {
 
     private Integer code;
