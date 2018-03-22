@@ -1,6 +1,6 @@
 package com.noobug.SpringBoot2Template.security.jwt;
 
-import io.github.jhipster.config.JHipsterProperties;
+import com.noobug.webtools.utils.ConfigUtil;
 import io.jsonwebtoken.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,21 +30,15 @@ public class TokenProvider {
 
     private long tokenValidityInMillisecondsForRememberMe;
 
-    private final JHipsterProperties jHipsterProperties;
-
-    public TokenProvider(JHipsterProperties jHipsterProperties) {
-        this.jHipsterProperties = jHipsterProperties;
-    }
-
     @PostConstruct
     public void init() {
-        this.secretKey =
-            jHipsterProperties.getSecurity().getAuthentication().getJwt().getSecret();
+        this.secretKey = ConfigUtil.getInstance()
+                .get("security.jwt.secret", "R3I5P6n2o4o1b");
 
-        this.tokenValidityInMilliseconds =
-            1000 * jHipsterProperties.getSecurity().getAuthentication().getJwt().getTokenValidityInSeconds();
-        this.tokenValidityInMillisecondsForRememberMe =
-            1000 * jHipsterProperties.getSecurity().getAuthentication().getJwt().getTokenValidityInSecondsForRememberMe();
+        this.tokenValidityInMilliseconds = ConfigUtil.getInstance()
+                .getLong("security.jwt.token-expired", 86400L);
+        this.tokenValidityInMillisecondsForRememberMe = ConfigUtil.getInstance()
+                .getLong("security.jwt.token-expired.remember", 248000L);
     }
 
     public String createToken(Authentication authentication, Boolean rememberMe) {
