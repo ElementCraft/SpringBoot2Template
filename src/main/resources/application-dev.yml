@@ -1,6 +1,6 @@
 logging:
     level:
-        ROOT: INFO
+        ROOT: WARN
         com.noobug: DEBUG
         org.springframework: INFO
 

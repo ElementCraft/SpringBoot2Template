@@ -6,13 +6,6 @@ spring:
   jpa:
     open-in-view: false
 
-  #========================
-  # «∞∂Àƒ£∞Â≈‰÷√
-#  thymeleaf:
-#    cache: false
-#    mode: HTML5
-
-
 server:
   tomcat:
     uri-encoding: UTF-8
